@@ -3,7 +3,7 @@ import unittest
 import redeemer.tokenwords.tokenconverter as tk
 
 
-class test_skey_dictionary(unittest.TestCase):
+class test_tokenconverter(unittest.TestCase):
     def setUp(self):
         pass
 
