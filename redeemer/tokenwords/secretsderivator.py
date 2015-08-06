@@ -7,7 +7,7 @@ SDConfig = namedtuple('SDConfig','salt, usage, iteration_count')
 class SecretsDerivator(object):
     def __init__(self, config):
         self.config = config
-        if not len(self.config.salt) or not int(self.config.iteration_count) or not len(self.config.usage):
+        if not len(self.config.salt) or int(self.config.iteration_count) <= 0 or not len(self.config.usage):
             raise ValueError("Must supply salt, usage and iteration count!")
 
     def derive_secrect(self, token):
