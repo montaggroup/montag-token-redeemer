@@ -63,9 +63,9 @@ target/
 *.pid
 
 web2py/applications/admin/sessions/
-web2py/applications/redeemer/databases/
-web2py/applications/redeemer/errors/
-web2py/applications/redeemer/sessions/
+web2py/applications/token_redeemer/databases/
+web2py/applications/token_redeemer/errors/
+web2py/applications/token_redeemer/sessions/
 web2py/parameters_8001.py
 web2py/welcome.w2p
 web2py/**/errors/
