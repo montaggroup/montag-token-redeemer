@@ -20,6 +20,7 @@ if __name__ == "__main__":
 
     os.chdir(os.path.join(get_main_dir(), 'web2py'))
     sys.path.append('.')
+    sys.path.append('..')
     sys.path.append('gluon')
 
     import web2py.gluon.widget

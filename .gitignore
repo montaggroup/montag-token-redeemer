@@ -73,3 +73,6 @@ web2py/**/errors/
 
 # pycharm config
 .idea
+
+# database
+storage.sqlite

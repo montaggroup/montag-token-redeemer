@@ -1,0 +1,61 @@
+{{extend 'layout.html'}}
+
+{{if secret is not None: }}
+
+<h3> Setup Instructions </h3>
+
+Note: Please bookmark this page for further reference. You will not be able to redeem the token again.
+
+<br>
+Below you find the settings to sync with our camp server.
+<br>
+Please use <b>Friends</b> => <b>Add friend</b>, enter <b>banana</b> and enter the settings from the table below.
+
+<p>
+Don't panic and have fun!
+</p>
+
+<table>
+    <tbody>
+    <tr id="no_table_name__row">
+        <td class="w2p_fl"><label for="no_table_name" id="no_table_name__label">Name: </label></td>
+        <td class="w2p_fw"><input class="string" id="no_table_name" name="name" value="banana montag" type="text"></td>
+     </tr>
+    <tr id="no_table_secret__row">
+        <td class="w2p_fl"><label for="no_table_secret" id="no_table_secret__label">Secret: </label></td>
+        <td class="w2p_fw"><input style="" class="password entropy_check" data-w2p_entropy="null" id="no_table_secret"
+                                  name="secret" value="{{=secret}}" type="text"></td>
+     </tr>
+    <tr id="no_table_confirm_secret__row">
+        <td class="w2p_fl"><label for="no_table_confirm_secret" id="no_table_confirm_secret__label">Confirm
+            Secret: </label></td>
+        <td class="w2p_fw"><input class="password" id="no_table_confirm_secret" name="confirm_secret" value="{{=secret}}"
+                                  type="text"></td>
+        <td class="w2p_fc"></td>
+    </tr>
+    <tr id="no_table_can_connect_to__row">
+        <td class="w2p_fl"><label for="no_table_can_connect_to" id="no_table_can_connect_to__label">Can Connect
+            To: </label></td>
+        <td class="w2p_fw"><input checked="checked" class="boolean" id="no_table_can_connect_to" name="can_connect_to"
+                                  value="on" type="checkbox"></td>
+
+    </tr>
+    <tr id="no_table_hostname__row">
+        <td class="w2p_fl"><label for="no_table_hostname" id="no_table_hostname__label">Hostname: </label></td>
+        <td class="w2p_fw"><input class="string" id="no_table_hostname" name="hostname" value="bananamontag.visitor.camp.ccc.de" type="text"></td>
+
+    </tr>
+    <tr id="no_table_port__row">
+        <td class="w2p_fl"><label for="no_table_port" id="no_table_port__label">Port: </label></td>
+        <td class="w2p_fw"><input class="string" id="no_table_port" name="port" value="1234" type="text"></td>
+
+    </tr>
+    <tr id="no_table_type__row">
+        <td class="w2p_fl"><label for="no_table_type" id="no_table_type__label">Type: </label></td>
+        <td class="w2p_fw"><input class="string" id="no_table_type" name="type" value="tcp_aes" type="text"></td>
+    </tr>
+    </tbody>
+</table>
+
+
+{{pass}}

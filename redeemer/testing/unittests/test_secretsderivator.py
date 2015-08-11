@@ -36,23 +36,23 @@ class test_secretsderivator(unittest.TestCase):
 
     def test_derivation_works_with_valid_config(self):
         sd = SecretsDerivator(self.config)
-        self.assertEquals(self.known_answer, sd.derive_secrect(self.token))
+        self.assertEquals(self.known_answer, sd.derive_secret(self.token))
 
     def test_derivation_works_with_a_second_known_input_set(self):
         config = SDConfig(salt='saltSALTsa', usage='ltSALTsaltSALTsaltSALTsalt', iteration_count=4096)
         sd = SecretsDerivator(config)
         self.assertEquals('8c0511f4c6e597c6ac6315d8f0362e225f3c501495ba23b868c005174dc4ee71'
                           '115b59f9e60cd9532fa33e0f75aefe30225c583a186cd82bd4daea9724a3d3b8',
-                          sd.derive_secrect('passwordPASSWORDpassword'))
+                          sd.derive_secret('passwordPASSWORDpassword'))
 
     def test_parameter_usage_correctly_separates_domains(self):
         sd = SecretsDerivator(self.config)
         config2 = SDConfig(salt='sa', usage='lz', iteration_count=1)
         sd2 = SecretsDerivator(config2)
-        self.assertNotEqual(sd.derive_secrect(self.token), sd2.derive_secrect(self.token))
+        self.assertNotEqual(sd.derive_secret(self.token), sd2.derive_secret(self.token))
 
     def test_derivation_is_deterministic_over_time(self):
         sd = SecretsDerivator(self.config)
         for x in xrange(20):
-            self.assertEquals(self.known_answer, sd.derive_secrect(self.token))
+            self.assertEquals(self.known_answer, sd.derive_secret(self.token))
 
