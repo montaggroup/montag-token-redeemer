@@ -1,7 +1,9 @@
 import os
 import sys
 import subprocess
-pydb_tool_path = os.path.join('..', 'montag', 'pydbtool.py')
+
+script_path = os.path.dirname(__file__)
+pydb_tool_path = os.path.join(script_path, '..', '..', 'montag', 'pydbtool.py')
 
 
 def _call_pydb_tool(*args):
